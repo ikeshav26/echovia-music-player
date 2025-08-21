@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8B5CF6;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#3B82F6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#06B6D4;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background Circle -->
+  <circle cx="50" cy="50" r="45" fill="url(#gradient)" stroke="#ffffff" stroke-width="2"/>
+  
+  <!-- Music Note -->
+  <path d="M35 25 L35 65 Q35 70 40 70 Q45 70 45 65 L45 35 L65 30 L65 60 Q65 65 70 65 Q75 65 75 60 Q75 55 70 55 Q65 55 65 60 L65 30 L45 35 L45 65 Q45 70 40 70 Q35 70 35 65 Q35 60 40 60 Q45 60 45 65 L45 35 L35 25 Z" 
+        fill="#ffffff" 
+        stroke="#ffffff" 
+        stroke-width="1"/>
+  
+  <!-- Musical Notes Decoration -->
+  <circle cx="25" cy="20" r="3" fill="#ffffff" opacity="0.7"/>
+  <circle cx="75" cy="15" r="2" fill="#ffffff" opacity="0.7"/>
+  <circle cx="20" cy="80" r="2.5" fill="#ffffff" opacity="0.7"/>
+  <circle cx="80" cy="85" r="2" fill="#ffffff" opacity="0.7"/>
+  
+  <!-- Sound Waves -->
+  <path d="M15 45 Q20 40 15 35" stroke="#ffffff" stroke-width="2" fill="none" opacity="0.6"/>
+  <path d="M10 50 Q18 42 10 30" stroke="#ffffff" stroke-width="2" fill="none" opacity="0.4"/>
+  
+  <path d="M85 55 Q80 60 85 65" stroke="#ffffff" stroke-width="2" fill="none" opacity="0.6"/>
+  <path d="M90 50 Q82 58 90 70" stroke="#ffffff" stroke-width="2" fill="none" opacity="0.4"/>
+</svg>
