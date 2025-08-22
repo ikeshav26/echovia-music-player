@@ -17,9 +17,7 @@
 
 ## 🌟 Live Demo
 
-- **Frontend**: [https://echovia.ikeshav.tech](https://echovia.ikeshav.tech)
-- **Backend API**: [https://echovia-1.onrender.com](https://echovia.onrender.com)
-
+- **Project**: [https://echovia-music-player.vercel.app](https://echovia-music-player.vercel.app)
 ---
 
 ## 📋 Table of Contents
