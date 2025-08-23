@@ -160,14 +160,6 @@ const SongsInPlaylist = () => {
           </div>
 
         
-          <div className="mb-6 md:mb-8">
-            <button className="bg-white/10 hover:bg-white/20 text-white px-4 md:px-6 py-2 md:py-3 rounded-lg transition-all duration-300 hover:scale-105 border border-white/10 flex items-center gap-2 text-sm md:text-base">
-              <Plus className="w-4 h-4 md:w-5 md:h-5" />
-              Add Songs to Playlist
-            </button>
-          </div>
-
-         
           <div className="space-y-4">
             <div className="flex items-center gap-4 text-sm text-gray-400 border-b border-white/10 pb-2">
               <div className="w-8 text-center">#</div>

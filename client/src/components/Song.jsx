@@ -88,6 +88,10 @@ const Song = () => {
     return currentSong && currentSong._id === song._id;
   };
 
+  const user=localStorage.getItem('user')?JSON.parse(localStorage.getItem('user')):null
+  const role=user.role
+  
+
   return (
     <div className="mt-6">
       <div className=" rounded-xl p-4 md:p-6">
@@ -169,15 +173,24 @@ const Song = () => {
                     </span>
                   </div>
 
-                  {/* Action Buttons */}
+                 
                   <div className="flex-shrink-0 flex items-center gap-1">
                     <button
                       onClick={() => navigate(`/add-to-playlist/${song._id}`)}
-                      className=" p-2 hover:bg-blue-500/20 rounded-lg transition-all duration-200"
+                      className="p-2 hover:bg-blue-500/20 rounded-lg transition-all duration-200"
                       title="Add to Playlist"
                     >
                       <Plus className="w-4 h-4 cursor-pointer text-blue-400" />
                     </button>
+                    {role !== 'user' && (
+                      <button
+                      onClick={() => navigate(`/add-to-album/${song._id}`)}
+                      className="p-2 hover:bg-green-500/20 rounded-lg transition-all duration-200"
+                      title="Add to Album"
+                    >
+                      <Music className="w-4 h-4 cursor-pointer text-green-400" />
+                    </button>
+                    )}
                     <button
                       onClick={() => handlePlayPause(song, index)}
                       className={`${

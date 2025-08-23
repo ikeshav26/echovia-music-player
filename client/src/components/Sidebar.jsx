@@ -1,5 +1,5 @@
 import React from "react";
-import { Plus, ListMusic, LayoutDashboard, X } from "lucide-react";
+import { Plus, ListMusic, LayoutDashboard, X, BookOpen } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import appContext from "../context/AppContext";
@@ -19,6 +19,12 @@ const Sidebar = () => {
         <Link to="/my-playlists">
           <button className="w-12 h-12 cursor-pointer flex items-center justify-center rounded-full bg-white/5 hover:bg-white/8 transition-all duration-300 hover:scale-105">
             <ListMusic className="text-white w-5 h-5" />
+          </button>
+        </Link>
+
+        <Link to="/all-albums">
+          <button className="w-12 h-12 cursor-pointer flex items-center justify-center rounded-full bg-white/5 hover:bg-white/8 transition-all duration-300 hover:scale-105">
+            <BookOpen className="text-white w-5 h-5" />
           </button>
         </Link>
 
@@ -84,6 +90,13 @@ const Sidebar = () => {
                 <button className="w-full mt-4 flex items-center gap-4 p-4 rounded-xl bg-white/5 hover:bg-white/10 transition-all duration-300">
                   <ListMusic className="text-white w-6 h-6" />
                   <span className="text-white font-medium">My Playlists</span>
+                </button>
+              </Link>
+
+              <Link to="/all-albums" onClick={closeMobileSidebar}>
+                <button className="w-full mt-4 flex items-center gap-4 p-4 rounded-xl bg-white/5 hover:bg-white/10 transition-all duration-300">
+                  <BookOpen className="text-white w-6 h-6" />
+                  <span className="text-white font-medium">All Albums</span>
                 </button>
               </Link>
 

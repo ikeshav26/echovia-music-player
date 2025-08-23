@@ -6,6 +6,7 @@ import userRoutes from './src/routes/user.routes.js';
 import adminRoutes from './src/routes/admin.routes.js';
 import songRoutes from './src/routes/song.routes.js';
 import playlistRoutes from './src/routes/playlist.routes.js';
+import albumRoutes from './src/routes/album.routes.js'
 import cors from 'cors';
 
 dotenv.config();
@@ -39,6 +40,7 @@ app.use('/api/users',userRoutes)
 app.use('/api/admins',adminRoutes)
 app.use('/api/songs',songRoutes)
 app.use('/api/playlists',playlistRoutes)
+app.use('/api/albums',albumRoutes)
 
 
 

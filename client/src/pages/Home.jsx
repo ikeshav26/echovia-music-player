@@ -4,6 +4,7 @@ import AllGenres from '../components/AllGenres'
 import Song from '../components/Song';
 import { useEffect } from 'react';
 import axios from 'axios';
+import AllAlbums from '../components/AllAlbums';
 
 const Home = () => {
 
@@ -27,7 +28,7 @@ const Home = () => {
           </div>
 
          
-          <div className="bg-white/5 backdrop-blur-lg border border-white/10 rounded-xl p-4 md:p-6">
+          <div className="bg-white/5 backdrop-blur-lg border border-white/10 rounded-xl p-4 md:p-6 mb-8">
             <div className="flex items-center justify-between mb-4">
               <h2 className="text-lg md:text-xl font-semibold flex items-center gap-2">
                 <TrendingUp className="w-5 h-5" />
@@ -35,9 +36,9 @@ const Home = () => {
               </h2>
             </div>
             <AllGenres />
-           
           </div>
-           <Song/>
+          <AllAlbums />
+          <Song/>
         </div>
       </div>
     </div>

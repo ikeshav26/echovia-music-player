@@ -20,6 +20,9 @@ import AddToPlaylist from "./pages/AddToPlaylist";
 import Result from "./pages/Result";
 import { useEffect } from "react";
 import axios from "axios";
+import Album from "./pages/Album";
+import AllAlbums from "./pages/AllAlbums";
+import AddToAlbum from "./pages/AddToAlbum";
 
 const App = () => {
   const { user, audioRef, currentSong } = useContext(appContext);
@@ -98,16 +101,23 @@ const App = () => {
           element={user ? <AddToPlaylist /> : <Navigate to="/login" />}
         />
         <Route
+          path="/add-to-album/:id"
+          element={user ? <AddToAlbum /> : <Navigate to="/login" />}
+        />
+        <Route
           path="/search/result"
           element={user ? <Result /> : <Navigate to="/login" />}
         />
+        <Route path='/album/:id' element={user ? <Album /> : <Navigate to="/login" />} />
+        <Route path='/all-albums' element={user ? <AllAlbums /> : <Navigate to="/login" />} />
       </Routes>
+      
       <Toaster
         position="top-right"
         toastOptions={{
           duration: 4000,
           style: {
-            background: "#27272a", // zinc-800 greyish background
+            background: "#27272a", 
             backdropFilter: "blur(16px)",
             color: "#ffffff",
             border: "1px solid rgba(255, 255, 255, 0.1)",

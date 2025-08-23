@@ -228,7 +228,7 @@ export const addSong = async (req, res) => {
 
 export const getAllSongs=async(req,res)=>{
   try{
-    const songs=await Song.find();
+    const songs=await Song.find().sort({createdAt:-1});
     res.status(200).json({
       message: 'Songs retrieved successfully',
       songs

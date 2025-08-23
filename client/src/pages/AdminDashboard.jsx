@@ -3,12 +3,14 @@ import { Settings, Users, Music, Database, Plus } from "lucide-react";
 import AddSong from '../components/AddSong'
 import ChangeRole from '../components/ChangeRole'
 import AllSongs from '../components/AllSongs'
+import CreateAlbum from '../components/CreateAlbum';
 
 const AdminDashboard = () => {
   const [activeTab, setActiveTab] = useState('add-song');
 
   const tabs = [
      { id: 'add-song', label: 'Add Song', icon: Plus },
+      { id: 'create-album', label: 'Create Album', icon: Plus },
     { id: 'change-role', label: 'Change Role', icon: Users },
     { id: 'all-songs', label: 'Songs', icon: Database }
   ];
@@ -19,6 +21,8 @@ const AdminDashboard = () => {
         return <ChangeRole />;
       case 'add-song':
         return <AddSong />;
+      case 'create-album':
+        return <CreateAlbum />;
       case 'all-songs':
         return <AllSongs />;
       default:
