@@ -26,10 +26,10 @@ export const addSong = async (req, res) => {
       'Telugu',
       'Bhojpuri',
       'Instrumental',
-      'Hip-Hop/Rap',
+      'Hip-Hop(Rap)',
       'Romantic',
-      'Party/Dance',
-      'Classical/Devotional',
+      'Party(Dance)',
+      'Classical(Devotional)',
       'Other'
     ];
     const songGenre = allowedGenres.includes(genre) ? genre : 'Other';
@@ -228,7 +228,7 @@ export const addSong = async (req, res) => {
 
 export const getAllSongs=async(req,res)=>{
   try{
-    const songs=await Song.find().sort({createdAt:-1});
+    const songs=await Song.find().sort({_id:-1});
     res.status(200).json({
       message: 'Songs retrieved successfully',
       songs

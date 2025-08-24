@@ -85,7 +85,7 @@ export const deleteAlbum=async(req,res)=>{
 
 export const fetchAllAlbums=async(req,res)=>{
     try{
-        const albums=await Album.find().sort({createdAt:-1});
+        const albums=await Album.find().sort({_id:-1});
         res.status(200).json(albums);
     }catch(err){
         res.status(500).json({ message: err.message })
@@ -102,6 +102,21 @@ export const fetchSongsInAlbum=async(req,res)=>{
             return res.status(404).json({ message: 'Album not found' });
         }
         res.status(200).json({ songs: album.songs });
+    }catch(err){
+        res.status(500).json({ message: err.message })
+    }
+}
+
+
+export const fetchAlbumDetailsById=async(req,res)=>{
+    try{
+        const {albumId}=req.params;
+
+        const album=await Album.findById(albumId);
+        if(!album){
+            return res.status(404).json({ message: 'Album not found' });
+        }
+        res.status(200).json({ album });
     }catch(err){
         res.status(500).json({ message: err.message })
     }

@@ -49,7 +49,7 @@ const AllGenres = () => {
       description: 'Classical & Modern Instruments'
     },
     { 
-      name: 'Hip-Hop/Rap', 
+      name: 'Hip-Hop(Rap)', 
       icon: '🎧', 
       color: 'from-gray-600 to-gray-800',
       description: 'Hip-Hop, Rap & Urban'
@@ -61,13 +61,13 @@ const AllGenres = () => {
       description: 'Love Songs & Ballads'
     },
     { 
-      name: 'Party/Dance', 
+      name: 'Party(Dance)', 
       icon: '💃', 
       color: 'from-green-400 to-blue-500',
       description: 'Dance Hits & Party Music'
     },
     { 
-      name: 'Classical/Devotional', 
+      name: 'Classical(Devotional)', 
       icon: '🙏', 
       color: 'from-amber-500 to-orange-500',
       description: 'Classical & Spiritual'

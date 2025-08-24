@@ -20,10 +20,10 @@ const AddSong = () => {
     'Telugu',
     'Bhojpuri',
     'Instrumental',
-    'Hip-Hop/Rap',
+    'Hip-Hop(Rap)',
     'Romantic',
-    'Party/Dance',
-    'Classical/Devotional',
+    'Party(Dance)',
+    'Classical(Devotional)',
     'Other'
   ];
 

@@ -107,10 +107,10 @@ export const updateSong = async (req, res) => {
         "Telugu",
         "Bhojpuri",
         "Instrumental",
-        "Hip-Hop/Rap",
+        "Hip-Hop(Rap)",
         "Romantic",
-        "Party/Dance",
-        "Classical/Devotional",
+        "Party(Dance)",
+        "Classical(Devotional)",
         "Other",
       ];
       const songGenre = allowedGenres.includes(genre) ? genre : "Other";

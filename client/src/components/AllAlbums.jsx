@@ -23,6 +23,8 @@ const AllAlbums = () => {
     fetchAlbums();
   }, []);
 
+  const latestALbums=albums.slice(0,8)
+
 
 
   return (
@@ -47,7 +49,7 @@ const AllAlbums = () => {
         ) : (
           <div>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-              {albums.map((album) => (
+              {latestALbums.map((album) => (
                 <div
                   key={album._id}
                   className="group bg-white/6 rounded-xl shadow-lg transition-all duration-200 hover:scale-[1.03] hover:shadow-xl cursor-pointer flex flex-col"

@@ -167,12 +167,6 @@ const Song = () => {
                     </p>
                   </div>
 
-                  <div className="flex-shrink-0 hidden sm:block">
-                    <span className="text-xs text-gray-500 bg-white/10 px-2 py-1 rounded-full whitespace-nowrap">
-                      {song.genre || "Unknown"}
-                    </span>
-                  </div>
-
                  
                   <div className="flex-shrink-0 flex items-center gap-1">
                     <button

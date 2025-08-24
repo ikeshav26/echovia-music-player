@@ -20,7 +20,6 @@ const Album = () => {
         const fetchedSongs = res.data.songs || [];
         const albumData = res.data.album || null;
         setSongs(fetchedSongs);
-        setAlbumInfo(albumData);
         if (fetchedSongs.length > 0) {
           localStorage.setItem('currentAlbumSongs', JSON.stringify(fetchedSongs));
           localStorage.setItem('currentAlbumInfo', JSON.stringify(albumData));
@@ -33,7 +32,18 @@ const Album = () => {
         setLoading(false);
       }
     };
+
+    const fetchAlbumInfo = async () => {
+      try {
+        const res = await axios.get(`${import.meta.env.VITE_API_URL}/albums/${id}`, { withCredentials: true });
+        setAlbumInfo(res.data.album);
+      } catch (err) {
+        console.error(err);
+        toast.error(err.response?.data?.message || 'Error fetching album info');
+      }
+    };
     fetchAlbum();
+    fetchAlbumInfo();
   }, [id]);
 
   const removeSong = async (songId, index) => {
@@ -85,6 +95,7 @@ const Album = () => {
   const user=localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')) : null;
   const role=user.role;
 
+
   if (loading) {
     return (
       <div className="min-h-screen bg-black text-white flex items-center justify-center">
@@ -123,13 +134,6 @@ const Album = () => {
                     {songs.length} {songs.length === 1 ? 'song' : 'songs'} • Created {albumInfo?.createdAt ? new Date(albumInfo.createdAt).toLocaleDateString() : ''}
                   </p>
                 </div>
-                <button
-                  onClick={playAlbum}
-                  className="ml-4 flex items-center justify-center gap-2 bg-white/6 hover:bg-white/10 cursor-pointer text-white px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-200"
-                >
-                  <Play className="w-4 h-4 text-white" />
-                  Play Album
-                </button>
               </div>
               {songs.length > 0 && (
                 <div className="flex justify-center sm:justify-start">
