@@ -179,6 +179,12 @@ export const ContextProvider = ({ children }) => {
         localStorage.removeItem("duration");
         localStorage.removeItem("volume");
         localStorage.removeItem("isPlaying");
+        localStorage.removeItem("currentAlbum");
+        localStorage.removeItem("currentPlaylist");
+        localStorage.removeItem("currentAlbumInfo");
+        localStorage.removeItem("currentAlbumName");
+        localStorage.removeItem("currentAlbumSongs");
+        localStorage.removeItem("currentPlaylistName");
     };
 
     const value = {

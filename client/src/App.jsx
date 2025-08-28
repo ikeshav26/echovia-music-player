@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
@@ -23,6 +23,7 @@ import axios from "axios";
 import Album from "./pages/Album";
 import AllAlbums from "./pages/AllAlbums";
 import AddToAlbum from "./pages/AddToAlbum";
+import SongPage from "./pages/SongPage";
 
 const App = () => {
   const { user, audioRef, currentSong } = useContext(appContext);
@@ -42,13 +43,14 @@ const App = () => {
 
     return () => clearInterval(intervalId);
   }, []);
+  const location=useLocation()
 
   return (
     <div className="">
-      {user ? <Navbar /> : null}
+      {user && !location.pathname.startsWith('/song/') ? <Navbar /> : null}
       {user ? <Sidebar /> : null}
       {user ? <SongData /> : null}
-      {user ? <MusicBar /> : null}
+      {user && !location.pathname.startsWith('/song/') ? <MusicBar/> : null}
       {user && (
         <audio
           ref={audioRef}
@@ -110,6 +112,7 @@ const App = () => {
         />
         <Route path='/album/:id' element={user ? <Album /> : <Navigate to="/login" />} />
         <Route path='/all-albums' element={user ? <AllAlbums /> : <Navigate to="/login" />} />
+        <Route path='/song/:id' element={user ? <SongPage /> : <Navigate to="/login" />} />
       </Routes>
       
       <Toaster

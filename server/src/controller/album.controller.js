@@ -36,6 +36,11 @@ export const addSongToAlbum=async(req,res)=>{
         if(!album){
             return res.status(404).json({ message: 'Album not found' });
         }
+
+        const existingSong = album.songs.find(song => song._id.toString() === songId);
+        if(existingSong){
+            return res.status(400).json({ message: 'Song already exists in album' });
+        }
         album.songs.push(songId);
         await album.save();
         res.status(200).json({ message: 'Song added to album successfully', album });

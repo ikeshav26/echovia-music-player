@@ -17,6 +17,7 @@ const Album = () => {
       try {
         setLoading(true);
         const res = await axios.get(`${import.meta.env.VITE_API_URL}/albums/${id}/songs`, { withCredentials: true });
+        console.log(res.data)
         const fetchedSongs = res.data.songs || [];
         const albumData = res.data.album || null;
         setSongs(fetchedSongs);
@@ -48,7 +49,7 @@ const Album = () => {
 
   const removeSong = async (songId, index) => {
     try {
-      const res = await axios.delete(`${import.meta.env.VITE_API_URL}/albums/remove-song/${id}/${songId}`, { withCredentials: true });
+      const res = await axios.delete(`${import.meta.env.VITE_API_URL}/albums/${id}/delete/${songId}`, { withCredentials: true });
       if (res.status === 200) {
         const updatedSongs = songs.filter((_, i) => i !== index);
         setSongs(updatedSongs);
